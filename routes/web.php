@@ -22,4 +22,13 @@ Route::get('/', 'PagesController@index')->name('Acceuil');
 Route::get('/index', 'PagesController@acceuil');
 Route::get('/cosmetic', 'PagesController@cosmetic');
 Route::get('/electronic', 'PagesController@electronic');
-Route::get('/admin', 'PagesController@administration');
+
+
+
+
+Route::group(['middleware' => ['auth']],function(){
+    Route::get('/admin', 'PagesController@administration');
+
+    //categories routes
+    Route;;match(['get','post'],'/admin/add-category','CategoryController@addCategory');
+});
