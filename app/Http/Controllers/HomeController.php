@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // Role::create(['name' => 'writer']);
+        //Role::create(['name' => 'writer']);
         Permission::create(['name' => 'edit articles']);
         return view('pages.intro');
     }

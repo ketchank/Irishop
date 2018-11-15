@@ -20,4 +20,8 @@ class PagesController extends Controller
     public function electronic(){
         return view ('pages.electronic');
     }
+
+    public function administration(){
+        return view ('admin.pages.dashboard');
+    }
 }

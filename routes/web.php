@@ -22,3 +22,4 @@ Route::get('/', 'PagesController@index')->name('Acceuil');
 Route::get('/index', 'PagesController@acceuil');
 Route::get('/cosmetic', 'PagesController@cosmetic');
 Route::get('/electronic', 'PagesController@electronic');
+Route::get('/admin', 'PagesController@administration');
