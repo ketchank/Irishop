@@ -24,4 +24,14 @@ class PagesController extends Controller
     public function administration(){
         return view ('admin.pages.dashboard');
     }
+
+    public function addCategory(){
+        return view('admin.categories.create');
+    }
+   
+
+
+   
+
+
 }
