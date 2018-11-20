@@ -24,7 +24,7 @@
 
 <div class="container">
     <div class="col-md-8">
-        <form class="form-horizontal" method="post" action="{{ url ('/product-add') }}" name="add_product" id="add_product"
+        <form class="form-horizontal" method="post" enctype = "multipart/form-data" action="{{ url ('/product-add') }}" name="add_product" id="add_product"
             novalidate="novalidate">
             {{ csrf_field() }}
 

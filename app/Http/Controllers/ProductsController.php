@@ -7,6 +7,8 @@ use App\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Input;
+use Image;
 
 class ProductsController extends Controller
 {
@@ -29,7 +31,32 @@ class ProductsController extends Controller
             }
             
             $product->price = $data['price'];
-            $product->image = '';
+
+            //uploading image
+           if($request-> hasFile('image')){
+               $image_temp = Input::file('image');
+                if($image_temp->isValid()){
+                    $extension = $image_temp->getClientOriginalExtension();
+                    $filename = rand(111,99999).'.'.$extension;
+                    $large_image_path ='img/backend_images/products/large/'.$filename;
+                    $medium_image_path ='img/backend_images/products/medium/'.$filename;
+                    $small_image_path ='img/backend_images/products/small/'.$filename;
+                    
+                    //Resize Image
+                     Image::make($image_temp)->save($large_image_path);
+                     Image::make($image_temp)->resize(600,600)->save($medium_image_path);
+                     Image::make($image_temp)->resize(300,300)->save($small_image_path);
+
+                    //storing image in table
+                    $product->image = $filename;
+                }
+           }
+
+
+
+
+
+
             $product->save();
             return redirect()->back()->with('flash_message_success', 'Produit ajouté avec succès !!');
         }
