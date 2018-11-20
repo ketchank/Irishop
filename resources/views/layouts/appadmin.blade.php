@@ -179,9 +179,14 @@
             // Apply the search
     table.columns().every( function () {
         var that = this;
- 
-        
     } );
+
+        $("#delCat").click(function(){
+            if(confirm('Voulez-vous vraiment supprimer cette Catégorie ?')){
+                return true;
+            }
+            return false;
+        });
         } );
     </script>
 </body>

@@ -36,7 +36,7 @@
             <td>{{$category->url}}</td>
             <td>
                 <a href="{{ url('/cat-edit'.$category->id)}}" class="btn btn-primary btn-sm">Modifier</a>            
-                <a href="" class="btn btn-danger btn-sm">Supprimer</a>            
+                <a id="delCat" href="{{ url('/cat-delete'.$category->id)}}" class="btn btn-danger btn-sm">Supprimer</a>            
             </td>
         </tr>
         @endforeach
