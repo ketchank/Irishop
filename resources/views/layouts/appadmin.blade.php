@@ -22,6 +22,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
     <!-- Styles -->
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
@@ -32,6 +34,9 @@
 
     {{--
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 
 </head>
 
@@ -59,7 +64,7 @@
                 <li>
                     <div class="link"><i class="fas fa-cubes"></i>Catégories<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
-                        <li><a href="#">Toutes les Catégories</a></li>
+                        <li><a href="/cat-view">Toutes les Catégories</a></li>
                         <li><a href="/cat-create">Nouvelle Catégorie</a></li>
                         
                     </ul>
@@ -119,17 +124,19 @@
         <!-- Page Content -->
         <div id="content">
             <div class="p-titre">
-            <span style="font-size: 3em;">
-  <i class="fas fa-user-secret">   Irishop </i>
+            <span style="font-size: 2em; color:#3D479D;">
+            <i class="fas fa-user-secret"> <span class="admin-tt">Console d'administration</span>    </i> 
 
-</span>
+        </span>
                
             </div>
             @yield('content')
         </div>
 
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
         $(function () {
             var Accordion = function (el, multiple) {
@@ -161,6 +168,21 @@
             var accordion = new Accordion($('#accordion'), false);
         });
 
+    </script>
+    <script>
+        $(document).ready( function () {
+            $('#cat_table').DataTable();
+
+             // DataTable
+            var table = $('#cat_table').DataTable();
+
+            // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        
+    } );
+        } );
     </script>
 </body>
 

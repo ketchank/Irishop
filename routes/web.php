@@ -28,7 +28,9 @@ Route::get('/electronic', 'PagesController@electronic');
 
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/admin', 'PagesController@administration');
-    Route::get('/add-category', 'PagesController@addCategory');
     Route::get('/cat-create', 'CategoryController@addCategory');
+    Route::get('/cat-view', 'CategoryController@viewCategories');
+    Route::post('/cat-create', 'CategoryController@addCategory');
+    Route::match(['get','post'],'/cat-edit{id}', 'CategoryController@editCategory');
 
 });

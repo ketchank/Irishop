@@ -76,6 +76,12 @@ div.center-div p{
 
 /* admin panel */
 
+.admin-tt{
+    text-transform: uppercase;
+    font-family: 'Merienda', cursive;
+    
+}
+
 ul { list-style-type: none; }
 
 a {

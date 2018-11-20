@@ -5,14 +5,16 @@
 
 <div class="container">
 <div class="col-md-8">
-<form class="form-horizontal" method="POST" action="{{url('/cat-create')}}" name="" id="" novalidate="novalidate" >
+<form class="form-horizontal" method="post" action="{{ url ('/cat-create') }}" name="add_category" id="add_category" novalidate="novalidate" >
+{{ csrf_field() }}
   <div class="form-group">
     <label for="name">Category Name</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="">
   </div>
   <div class="form-group">
     <label for="name">Category Description</label>
-    <input type="text" class="form-control" id="description" name="description" placeholder="">
+    
+     <textarea class="form-control" rows="5" id="comment" id="description" name="description"></textarea>
   </div>
   <div class="form-group">
     <label for="name">Category url</label>
