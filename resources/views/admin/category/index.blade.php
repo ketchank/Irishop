@@ -20,6 +20,7 @@
         <tr>
             <th>Category ID</th>
             <th>Category Name</th>
+            <th>Category Level</th>
             <th>Category Description</th>
             <th>Category Url</th>
             <th>Actions</th>
@@ -32,6 +33,7 @@
         <tr>
             <td>{{$category->id}}</td>
             <td>{{$category->name}}</td>
+            <td>{{$category->parent_id}}</td>
             <td>{{$category->description}}</td>
             <td>{{$category->url}}</td>
             <td>

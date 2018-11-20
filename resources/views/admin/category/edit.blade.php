@@ -12,6 +12,15 @@
     <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{$categoryDetails->name}}">
   </div>
   <div class="form-group">
+                <label for="name">Category Levels</label>
+               <select class="form-control" name="parent_id" id="">
+                  <option value="0">Categorie Principale</option>
+                  @foreach($levels as $val)
+                      <option value="{{$val->id}}" @if($val->id == $categoryDetails->parent_id) selected @endif>{{$val->name}}</option>
+                  @endforeach
+               </select>
+            </div>
+  <div class="form-group">
     <label for="name">Category Description</label>
     
      <textarea class="form-control" rows="5" id="comment" id="description" name="description" >{{$categoryDetails->description}}</textarea>
