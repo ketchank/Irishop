@@ -28,10 +28,18 @@ Route::get('/electronic', 'PagesController@electronic');
 
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/admin', 'PagesController@administration');
+
+    //categories management
     Route::get('/cat-create', 'CategoryController@addCategory');
     Route::get('/cat-view', 'CategoryController@viewCategories');
     Route::post('/cat-create', 'CategoryController@addCategory');
     Route::match(['get','post'],'/cat-edit{id}', 'CategoryController@editCategory');
     Route::match(['get','post'],'/cat-delete{id}', 'CategoryController@deleteCategory');
+
+
+
+    //product management
+    Route::match(['get','post'],'/product-add', 'ProductsController@addProduct');
+   
 
 });

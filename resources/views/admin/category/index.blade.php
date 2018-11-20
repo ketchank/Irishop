@@ -14,13 +14,13 @@
         <strong>{!! session('flash_message_success') !!}</strong>
     </div>
 @endif
-<div class="container">
+<div class="container-fluid">
     <table id="cat_table" class=" table-hover row-border">
     <thead>
         <tr>
-            <th>Category ID</th>
-            <th>Category Name</th>
-            <th>Category Level</th>
+            <th width="10px">Category ID</th>
+            <th width="10px">Category Name</th>
+            <th width="10px">Category Level</th>
             <th>Category Description</th>
             <th>Category Url</th>
             <th>Actions</th>

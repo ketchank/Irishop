@@ -54,11 +54,15 @@
 
             <ul id="accordion" class="accordion">
                 <li>
-                    <div class="link"><i class="fas fa-tachometer-alt"></i>Dashbord<i class="fa fa-chevron-down"></i></div>
+                    <div class="link"><i class="fas fa-tachometer-alt"></i>Dashbord</div>
+                    
+                </li>
+                <li>
+                    <div class="link"><i class="fas fa-cubes"></i>Produits<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
-                        <li><a href="#">Photoshop</a></li>
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
+                        <li><a href="/cat-view">Toutes les Produits</a></li>
+                        <li><a href="/product-add">Nouveau Produit</a></li>
+                        
                     </ul>
                 </li>
                 <li>
@@ -69,14 +73,7 @@
                         
                     </ul>
                 </li>
-                <li>
-                    <div class="link"><i class="fas fa-box"></i>Produits<i class="fa fa-chevron-down"></i></div>
-                    <ul class="submenu">
-                        <li><a href="#">Photoshop</a></li>
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                    </ul>
-                </li>
+                
                 <li>
                     <div class="link"><i class="fas fa-shipping-fast"></i>Livraison<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
@@ -172,6 +169,8 @@
     <script>
         $(document).ready( function () {
             $('#cat_table').DataTable();
+
+            $("#myAlert").alert('close');
 
              // DataTable
             var table = $('#cat_table').DataTable();
